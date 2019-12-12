@@ -1,12 +1,12 @@
-DROP TABLE  IF EXISTS academie;
-CREATE TABLE academie (
-  id              SERIAL PRIMARY KEY,
-  acacode           VARCHAR(3) UNIQUE  NOT NULL,
-  libelle_court  VARCHAR(30) NOT NULL,
-  libelle_long    VARCHAR(30) NOT NULL
+DROP TABLE  IF EXISTS tac;
+CREATE TABLE tac (
+numart               SERIAL  PRIMARY KEY,                                 
+codart               char(3)   ,                              
+libcou               char(10)  ,                              
+liblon               char(40)  
 );
-DROP TABLE IF EXISTS department;
-CREATE TABLE department (
+DROP TABLE IF EXISTS tdp;
+CREATE TABLE tdp (
   id              SERIAL PRIMARY KEY,
   acacode      VARCHAR(3) ,
   deptcode        VARCHAR(3) UNIQUE NOT NULL,
@@ -14,23 +14,33 @@ CREATE TABLE department (
   libelle_long    VARCHAR(30) NOT NULL
 );
 
-DROP TABLE IF EXISTS discipline;
-CREATE TABLE discipline (
-  id             SERIAL PRIMARY KEY,
-  disccode       VARCHAR(5) UNIQUE  NOT NULL,
-  libelle_court  VARCHAR(30) NOT NULL,
-  libelle_long   VARCHAR(30)NOT NULL
+DROP TABLE IF EXISTS tdi;
+CREATE TABLE tdi (
+discco               char(5)  ,                               
+disclc               char(10)  ,                              
+discli               char(40) ,                               
+dsspec               char(2) ,                                
+discdd               date ,                                   
+discdf               date ,                                   
+foncco               char(3) 
 );
 
-DROP TABLE IF EXISTS info_mouvement;
-CREATE TABLE info_mouvement (
-  id                    SERIAL PRIMARY KEY,
-  disccode           VARCHAR(5),
-  acacode            VARCHAR(3),
-  deptcode           VARCHAR(3),
-  bar_entree            integer,
-  bar_sortis            integer ,
-  nbr_entrant           integer ,
-  nbr_sortant           integer,
-  annee           integer,
-  );
+DROP TABLE IF EXISTS carto;
+create table carto
+(
+    cartonum    serial,
+    phase       char(5),
+    degre       char(2),
+    annee       smallint,
+    acadco      char(2),
+    depaco      char(3),
+    uaarne      char(8),
+    discco      char(5),
+    barrent     integer,
+    barrsor     integer,
+    entrants    integer,
+    sortants    integer,
+    nbcdt       integer,
+    nbsaf       integer
+);
+
