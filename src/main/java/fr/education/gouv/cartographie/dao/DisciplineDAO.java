@@ -1,18 +1,20 @@
 package fr.education.gouv.cartographie.dao;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.education.gouv.cartographie.Idao.IDisciplineDAO;
 import fr.education.gouv.cartographie.entity.Academie;
+import fr.education.gouv.cartographie.entity.Departement;
 import fr.education.gouv.cartographie.entity.Discipline;
 import lombok.Data;
 
 @Data
 public class DisciplineDAO implements  IDisciplineDAO{
-
-	public final String REQUEST = "select * from ACAD ";
 
 	public DisciplineDAO() {
 		super();
@@ -24,8 +26,16 @@ public class DisciplineDAO implements  IDisciplineDAO{
 		return instance;
 	}
 
-	public List<Discipline> getAllDisciplines() {
-		// TODO Auto-generated method stub
-		return null;
+	@Override
+	public List<Discipline> getAllDisciplines(Connection connection, String query)throws SQLException {
+		List<Discipline> disciplines = new ArrayList<>();
+		Statement st = connection.createStatement();
+		ResultSet rs = st.executeQuery(query);
+		while (rs.next()) {
+			disciplines.add(translateToEntity(rs));
+		}
+		return disciplines;
 	}
+
+
 }

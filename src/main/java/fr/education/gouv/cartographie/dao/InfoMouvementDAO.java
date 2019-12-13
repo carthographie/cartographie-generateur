@@ -1,5 +1,6 @@
 package fr.education.gouv.cartographie.dao;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -21,28 +22,35 @@ public class InfoMouvementDAO implements  IInfoMouvementDAO{
 		return instance;
 	}
 
-	public List<InfoMouvement> getAllInfoMvt() {
+	@Override
+	public List<InfoMouvement> getAllInfoMvt(Connection connection)throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<InfoMouvement> getAllInfoMvtByAnnee(Integer annee) {
+	@Override
+	public List<InfoMouvement> getAllInfoMvtByAnnee(Connection connection, Integer annee)throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<InfoMouvement> getInfoMvtByAnneeAndDepartment(Integer annee, String deptcode) {
+	@Override
+	public List<InfoMouvement> getInfoMvtByAnneeAndDepartment(Connection connection, Integer annee, String deptcode)throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<InfoMouvement> getInfoMvtByAnneeAndDiscipline(Integer annee, String discco) {
+	@Override
+	public List<InfoMouvement> getInfoMvtAcademiesAndAnnee(Connection connection, Integer annee)throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<InfoMouvement> getInfoMvtAcademiesAndAnnee(Integer annee) {
+	@Override
+	public List<InfoMouvement> getInfoMvtByAnneeAndDiscipline(Connection connection, Integer annee, String discco) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 }

@@ -7,7 +7,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cartographie-generator</name>
 	<description>jar pour generer des fichier html statiques </description>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<java.version>1.7</java.version>
+		<version.rc>1</version.rc>
+	</properties>
 	<dependencies>
 
 		<dependency>
@@ -16,12 +23,12 @@
 			<version>1.18.8</version>
 			<scope>provided</scope>
 		</dependency>
-		
-			<dependency>
-				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>42.2.6</version>
-			</dependency>
-		
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.6</version>
+		</dependency>
+
 	</dependencies>
 </project>

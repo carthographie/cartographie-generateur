@@ -5,6 +5,8 @@ import java.util.List;
 import fr.education.gouv.cartographie.Idao.IDepartementDAO;
 import fr.education.gouv.cartographie.Iservice.IDepartementService;
 import fr.education.gouv.cartographie.dao.DaoFactory;
+import fr.education.gouv.cartographie.db.DBCacheDataCartographie;
+import fr.education.gouv.cartographie.entity.Academie;
 import fr.education.gouv.cartographie.entity.Departement;
 
 public class DepartementService implements IDepartementService {
@@ -15,8 +17,9 @@ public class DepartementService implements IDepartementService {
 	}
 
 	public List<Departement> getAllDepartements() {
-		// TODO Auto-generated method stub
-		return departementdao.getAllDepartements();
+		return (List<Departement>) DBCacheDataCartographie.getDepartements().values();
 	}
-
+	public List<Academie> getDepartementByCode(String acaCode) {
+		return (List<Academie>) DBCacheDataCartographie.getDepartements().get(acaCode);
+	}
 }

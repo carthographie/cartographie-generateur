@@ -5,6 +5,8 @@ import java.util.List;
 import fr.education.gouv.cartographie.Idao.IInfoMouvementDAO;
 import fr.education.gouv.cartographie.Iservice.IInfoMouvementService;
 import fr.education.gouv.cartographie.dao.DaoFactory;
+import fr.education.gouv.cartographie.db.DBCacheDataCartographie;
+import fr.education.gouv.cartographie.entity.Discipline;
 import fr.education.gouv.cartographie.entity.InfoMouvement;
 
 public class InfoMouvementService implements IInfoMouvementService {
@@ -16,27 +18,23 @@ public class InfoMouvementService implements IInfoMouvementService {
 	}
 
 	public List<InfoMouvement> getAllInfoMvt() {
-		return infoMVTdao.getAllInfoMvt();
+		return (List<InfoMouvement>) DBCacheDataCartographie.getInfoMouvements().values();
 	}
 
 	public List<InfoMouvement> getAllInfoMvtByAnnee(Integer annee) {
-		// TODO Auto-generated method stub
-		return infoMVTdao.getAllInfoMvtByAnnee(annee);
+		return (List<InfoMouvement>) DBCacheDataCartographie.getInfoMouvements().get(annee);
 	}
 
 	public List<InfoMouvement> getInfoMvtByAnneeAndDepartment(Integer annee, String deptcode) {
-		// TODO Auto-generated method stub
-		return infoMVTdao.getInfoMvtByAnneeAndDepartment(annee, deptcode);
+		return (List<InfoMouvement>) DBCacheDataCartographie.getInfoMouvements().get(deptcode) ;
 	}
 
 	public List<InfoMouvement> getInfoMvtAcademiesAndAnnee(Integer annee) {
-		// TODO Auto-generated method stub
-		return infoMVTdao.getInfoMvtAcademiesAndAnnee(annee);
+		return (List<InfoMouvement>) DBCacheDataCartographie.getInfoMouvements().get(annee) ;
 	}
 
 	public List<InfoMouvement> getInfoMvtByAnneeAndDiscipline(Integer annee, String discco) {
-		// TODO Auto-generated method stub
-		return infoMVTdao.getInfoMvtByAnneeAndDiscipline(annee, discco);
+		return (List<InfoMouvement>) DBCacheDataCartographie.getInfoMouvements().get(discco) ;
 	}
 
 }
