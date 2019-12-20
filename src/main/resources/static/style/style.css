@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 500px;
+	justify-content: center;
+}
+
+a {
+	margin: 50px auto;
+	color: white;
+	background-color: rgb(37, 110, 194);
+	/* background-color: white; */
+	text-decoration: none;
+	padding: 14px 25px;
+	/* border: 2px solid rgb(37, 110, 194); */
+	border-radius: 5px;
+}
+
+a:hover {
+	background-color: rgb(42, 135, 241);
+	color: white;
+}
