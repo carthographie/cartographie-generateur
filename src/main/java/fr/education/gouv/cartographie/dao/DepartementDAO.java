@@ -9,7 +9,6 @@ import java.util.List;
 
 import fr.education.gouv.cartographie.Idao.IAcademieDAO;
 import fr.education.gouv.cartographie.Idao.IDepartementDAO;
-import fr.education.gouv.cartographie.constants.DatabaseEnum;
 import fr.education.gouv.cartographie.entity.Academie;
 import fr.education.gouv.cartographie.entity.Departement;
 
