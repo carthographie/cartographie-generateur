@@ -1,0 +1,55 @@
+h1, h2 {
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;   
+}
+
+.col-header{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(42, 126, 221);
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.row-header{
+    font-weight: bold;
+}
+
+.cell{
+    padding: 10px 10px;
+    border: solid 1px #d9d9d9;
+}
+
+.cell:hover {
+    background-color: rgb(59, 151, 255);
+}
+
+:target{
+    background-color: rgb(209, 209, 209);
+    transition: 0.7s;
+}

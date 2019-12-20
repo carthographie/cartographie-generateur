@@ -1,0 +1,31 @@
+#map-departements {
+    fill : #cecece;
+    /*display: none;*/
+} 
+#map-academies{
+    /*display: none;*/
+    fill: #da2525;
+}
+
+#map-academies path{
+    fill: #25daad;
+}
+
+#map-academies path:hover{
+    fill-opacity: 0.6;
+    transition: fill-opacity 0.5s;
+}
+
+#map-academies a#paris:hover{
+    transform: matrix(4, 0, 0, 4, -1308, -73);
+}
+
+.map #departements path:hover{
+    fill: #0000ff;
+    transition: fill 0.7s;
+}
+
+.map #departements #idf:hover{
+    fill: black;
+    transform: matrix(4, 0, 0, 4, -1308, -72);
+}
