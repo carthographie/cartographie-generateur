@@ -1,15 +1,16 @@
 package fr.education.gouv.cartographie.main;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import java.util.ArrayList;
+import java.util.List;
 
+import fr.education.gouv.cartographie.constants.LinkPagesEnum;
 import fr.education.gouv.cartographie.db.DBCacheDataCartographie;
-import fr.education.gouv.cartographie.db.DBCartographie;
-import fr.education.gouv.cartographie.db.DBManagerCartorgraphie;
-import fr.education.gouv.cartographie.presentation.HtmlComposant;
+import fr.education.gouv.cartographie.presentation.CartoEntryPoint;
+import fr.education.gouv.cartographie.presentation.HtmlPage;
+import fr.education.gouv.cartographie.service.DisciplineService;
+import fr.education.gouv.cartographie.service.ServiceFactory;
+import fr.education.gouv.cartographie.utils.HtmlPageGenrator;
 
 public class MainApplication {
 	public static void main(String[] args) {
@@ -19,9 +20,10 @@ public class MainApplication {
 				fileName += "-" + arg;
 			}
 		}
-		DBCacheDataCartographie.loadCache(fileName);
 		
-
+		DBCacheDataCartographie.loadCache(fileName);
+		CartoEntryPoint carto = new CartoEntryPoint();
+		carto.lancer(args);
 	}
 
 }

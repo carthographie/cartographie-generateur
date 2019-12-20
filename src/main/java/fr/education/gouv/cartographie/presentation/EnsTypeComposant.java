@@ -4,7 +4,7 @@ import java.util.List;
 
 import fr.education.gouv.cartographie.entity.InfoMouvement;
 
-public class HtmlComposant {
+public   class EnsTypeComposant extends HtmlPage{
 
 	public StringBuilder genereTableau(List<InfoMouvement> infoMvts) {
 		StringBuilder tableauBuilder = new StringBuilder();

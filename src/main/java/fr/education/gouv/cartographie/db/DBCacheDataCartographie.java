@@ -151,4 +151,5 @@ public class DBCacheDataCartographie {
 	public static Map<String, Discipline> getDisciplines() {
 		return (Map<String, Discipline>) maps.get(Discipline.class);
 	}
+	
 }
